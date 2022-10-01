@@ -1,0 +1,85 @@
+.list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  min-width: 100%;
+  min-height: 15rem;
+}
+
+.item {
+  border-bottom: 1px solid hsl(var(--clr-gray-300));
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  padding: 1rem 1.5rem;
+  background-color: hsl(var(--clr-white));
+}
+
+.delete-btn {
+  /* padding: 1rem 2rem; */
+  margin-left: auto;
+  display: flex;
+}
+
+.delete {
+  width: 1.6rem;
+  aspect-ratio: 1;
+}
+
+.checkbox {
+  cursor: pointer;
+  appearance: none;
+  /* For iOS < 15 to remove gradient background */
+  background-color: hsl(var(--clr-white));
+  /* Not removed via appearance */
+  margin: 0;
+
+  font: inherit;
+  color: currentColor;
+  width: 2.5rem;
+  aspect-ratio: 1;
+
+  border: 0.1rem solid hsl(var(--clr-gray-200));
+  border-radius: 50%;
+
+  /* transform: translateY(-0.075em); */
+}
+
+.checkbox:checked {
+  /*  */
+  background: linear-gradient(
+    to right bottom,
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+  );
+  position: relative;
+}
+.checkbox:checked::after {
+  content: url(../../images/icon-check.svg);
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.checkbox:checked + .text {
+  color: hsl(var(--clr-gray-400));
+  text-decoration: line-through;
+}
+
+/*FIXME, weird space under text??  */
+label {
+  padding: 0;
+  margin: 0;
+}
+
+.text {
+  color: hsl(var(--clr-gray-500));
+  width: 100%;
+  height: 100%;
+
+  /* display: inline-block;
+  vertical-align: middle;
+  line-height: normal; */
+}

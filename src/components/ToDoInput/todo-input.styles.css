@@ -1,0 +1,30 @@
+.form {
+  position: relative;
+  width: 100%;
+}
+
+.input {
+  border-radius: var(--bor-rad);
+  border: none;
+  padding: 1.4rem 1.5rem;
+  /* wierd text fix below*/
+  padding-top: 1.6rem;
+  width: 100%;
+  padding-left: 3.8rem;
+  margin-bottom: 1.5rem;
+  background-color: hsl(var(--clr-white));
+  color: hsl(var(--clr-gray-500));
+}
+
+/* input.input::placeholder {
+  padding-top: 0.25rem;
+} */
+
+.checkbox--fake {
+  cursor: unset !important;
+  position: absolute;
+  width: 1.5rem !important;
+  /* padding-left: 2rem; */
+  top: 23%;
+  left: 1.5rem;
+}

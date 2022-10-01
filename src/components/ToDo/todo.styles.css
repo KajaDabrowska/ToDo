@@ -1,0 +1,164 @@
+/*
+Primary
+Bright Blue: hsl(220, 98%, 61%)
+Check Background: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%)
+Neutral
+
+Light Theme
+Very Light Gray: hsl(0, 0%, 98%)
+Very Light Grayish Blue: hsl(236, 33%, 92%)
+Light Grayish Blue: hsl(233, 11%, 84%)
+Dark Grayish Blue: hsl(236, 9%, 61%)
+Very Dark Grayish Blue: hsl(235, 19%, 35%)
+
+Dark Theme
+Very Dark Blue: hsl(235, 21%, 11%) //
+Very Dark Desaturated Blue: hsl(235, 24%, 19%)
+Light Grayish Blue: hsl(234, 39%, 85%) //
+Light Grayish Blue (hover): hsl(236, 33%, 92%)
+Dark Grayish Blue: hsl(234, 11%, 52%)
+Very Dark Grayish Blue: hsl(233, 14%, 35%) //
+Very Dark Grayish Blue: hsl(237, 14%, 26%) //
+*/
+
+/* font font-family: 'Josefin Sans', sans-serif; 400, 700 */
+
+:root {
+  /* colors */
+  --clr-primary: 220, 98%, 61%;
+
+  --clr-dark: 230, 35%, 7%;
+  --clr-light: 231, 77%, 90%;
+  --clr-white: 0, 0%, 100%;
+
+  /* hsl does not work in shadow  */
+  --clr-shadow: #dbdbdb;
+  --clr-gray-100: 0, 0%, 98%;
+  --clr-gray-200: 236, 33%, 92%;
+  --clr-gray-300: 233, 11%, 84%;
+  --clr-gray-400: 236, 9%, 61%;
+  --clr-gray-500: 235, 19%, 35%;
+
+  /* font-families */
+  --ff-serif: "Josefin Sans", sans-serif;
+  /* --ff-sans-cond: "Barlow Condensed", sans-serif;
+  --ff-sans-normal: "Barlow", sans-serif; */
+
+  --ff-w-l: 400;
+  --ff-w-b: 700;
+
+  --bor-rad: 0.3em;
+}
+
+.dark-mode {
+  /* --clr-dark: 230, 35%, 7%; */
+  /* --clr-light: 231, 77%, 90%; */
+  --clr-white: 235, 24%, 19%;
+
+  --clr-shadow: 235, 21%, 11%;
+  --clr-gray-100: 235, 21%, 11%;
+  --clr-gray-200: 233, 14%, 35%;
+  --clr-gray-300: 237, 14%, 26%;
+  --clr-gray-400: 233, 14%, 35%;
+  --clr-gray-500: 234, 39%, 85%;
+}
+
+.txt-fix {
+  padding-top: 0.25rem;
+}
+
+.background {
+  z-index: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: hsl(var(--clr-gray-100));
+}
+.bg-image {
+  z-index: -1;
+  height: 35vh;
+  width: 100%;
+
+  position: absolute;
+  /* object-fit: cover; */
+}
+
+.background.dark-mode .bg-image {
+  content: url(../../images/bg-desktop-dark.jpg);
+}
+@media (max-width: 35em) {
+  .bg-image {
+    content: url(../../images/bg-mobile-light.jpg);
+  }
+
+  .background.dark-mode .bg-image {
+    content: url(../../images/bg-mobile-dark.jpg);
+  }
+}
+
+.container {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.toDoContainer {
+  width: 100%;
+  max-width: 40rem;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3.5rem;
+
+  font-family: var(--ff-serif);
+}
+
+.title {
+  font-size: 2.5rem;
+  /* color: hsl(var(--clr-white)); */
+  color: white;
+  font-weight: var(--ff-w-b);
+  letter-spacing: 0.9rem;
+}
+
+.flex-apart {
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+}
+
+.title-and-toggle {
+  margin-bottom: 3rem;
+}
+
+.list-and-bar {
+  /*  */
+  background-color: hsl(var(--clr-white));
+  border-radius: var(--bor-rad);
+  box-shadow: 0rem 0.5rem 1.5rem var(--clr-shadow);
+  width: 100%;
+
+  margin-bottom: 1rem;
+}
+
+.left-and-clear {
+  color: hsl(var(--clr-gray-400));
+  padding: 1.3rem 1.5rem;
+}
+
+.clear-btn:hover {
+  color: hsl(var(--clr-gray-500));
+}
+
+.drag-and-drop {
+  color: hsl(var(--clr-gray-400));
+  font-size: 0.9rem;
+}
