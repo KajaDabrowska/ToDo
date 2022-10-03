@@ -1,26 +1,32 @@
 import { useState } from "react";
 import uuid from "react-uuid";
-import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
+import {
+  DragDropContext,
+  Droppable,
+  Draggable,
+  DropResult,
+} from "@hello-pangea/dnd";
 
 import crossIcon from "../../images/icon-cross.svg";
 
 import "./toDoList.styles.css";
 
-/*
-const toDo = {
-      text: value,
-      id: nextId(),
-      completed: false,
-    };
-*/
+import { ToDoType } from "../ToDo/todo.component";
+
+type Props = {
+  toDoArr: ToDoType[];
+  toDoArrDisplayed: ToDoType[];
+  setToDoArr: React.Dispatch<React.SetStateAction<ToDoType[]>>;
+  setToDoArrDisplayed: React.Dispatch<React.SetStateAction<ToDoType[]>>;
+};
 
 const ToDoList = ({
   toDoArr,
   toDoArrDisplayed,
   setToDoArr,
   setToDoArrDisplayed,
-}) => {
-  function handleDragEnd(result) {
+}: Props) => {
+  function handleDragEnd(result: DropResult) {
     if (!result.destination) return;
     const items = Array.from(toDoArrDisplayed);
 
@@ -33,7 +39,7 @@ const ToDoList = ({
     setToDoArrDisplayed(items);
   }
 
-  const Item = ({ id, completed, text }) => {
+  const Item = ({ id, completed, text }: ToDoType) => {
     const [checked, setChecked] = useState(completed);
 
     const handleCheck = () => {

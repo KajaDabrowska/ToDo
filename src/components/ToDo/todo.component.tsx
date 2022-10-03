@@ -10,9 +10,15 @@ import sunIcon from "../../images/icon-sun.svg";
 
 import "./todo.styles.css";
 
+export type ToDoType = {
+  text: string;
+  id: string;
+  completed: boolean;
+};
+
 const ToDo = () => {
-  const [toDoArr, setToDoArr] = useState([]);
-  const [toDoArrDisplayed, setToDoArrDisplayed] = useState([]);
+  const [toDoArr, setToDoArr] = useState<ToDoType[]>([]);
+  const [toDoArrDisplayed, setToDoArrDisplayed] = useState<ToDoType[]>([]);
   const [isDarkTheme, setisDarkTheme] = useState(false);
   const [currentFilter, setCurrentFilter] = useState("all");
 
@@ -26,7 +32,7 @@ const ToDo = () => {
     setCurrentFilter("all");
   };
 
-  const handleFilter = (option) => {
+  const handleFilter = (option: string) => {
     if (option === "all") {
       setToDoArrDisplayed(toDoArr);
       setCurrentFilter("all");
@@ -118,3 +124,4 @@ export default ToDo;
 // small mobile fixes
 //DONE box shadow fix
 // filter part of container upper it on desktop
+// add ts
