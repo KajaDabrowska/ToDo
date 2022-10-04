@@ -120,6 +120,11 @@ Very Dark Grayish Blue: hsl(237, 14%, 26%) //
   font-family: var(--ff-serif);
 }
 
+.title-and-toggle {
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+}
+
 .title {
   font-size: 2.5rem;
   /* color: hsl(var(--clr-white)); */
@@ -127,16 +132,21 @@ Very Dark Grayish Blue: hsl(237, 14%, 26%) //
   font-weight: var(--ff-w-b);
   letter-spacing: 0.9rem;
 }
+@media (max-width: 35em) {
+  .toDoContainer {
+    margin-bottom: 1.5rem;
+  }
 
+  .title-and-toggle {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+  }
+}
 .flex-apart {
   display: flex;
   justify-content: space-between;
 
   width: 100%;
-}
-
-.title-and-toggle {
-  margin-bottom: 3rem;
 }
 
 .list-and-bar {
@@ -150,6 +160,7 @@ Very Dark Grayish Blue: hsl(237, 14%, 26%) //
 }
 
 .left-and-clear {
+  position: relative;
   color: hsl(var(--clr-gray-400));
   padding: 1.3rem 1.5rem;
 }

@@ -28,7 +28,14 @@
 }
 
 .checkbox {
+  /* position: absolute; */
+  /*TODO if hover do top */
+  /* top: 1.3px; */
+  /* top: 51%;
+  left: 52%;
+  transform: translate(-51%, -51%); */
   cursor: pointer;
+  /* position: relative; */
   appearance: none;
   /* For iOS < 15 to remove gradient background */
   background-color: hsl(var(--clr-white));
@@ -37,14 +44,50 @@
 
   font: inherit;
   color: currentColor;
-  width: 2.5rem;
+  width: 2rem;
   aspect-ratio: 1;
 
   border: 0.1rem solid hsl(var(--clr-gray-200));
   border-radius: 50%;
-
-  /* transform: translateY(-0.075em); */
 }
+/* TODO */
+/* .checkbox:hover {
+  border-color: transparent;
+}
+
+.gradient-radius {
+  position: relative;
+  aspect-ratio: 1;
+  width: 2.15rem;
+  height: 2.15rem;
+
+  border-radius: 50%;
+  background: linear-gradient(
+    to right bottom,
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+  );
+  padding: 1px;
+} */
+/* .checkbox:hover {
+  background-clip: padding-box; 
+  border: solid 5px transparent; 
+  border-radius: 1em;
+} */
+
+/* .checkbox:hover::after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: calc(100% + 0.2rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: linear-gradient(
+    to right bottom,
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+  );
+} */
 
 .checkbox:checked {
   /*  */

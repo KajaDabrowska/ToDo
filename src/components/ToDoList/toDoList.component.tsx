@@ -65,6 +65,7 @@ const ToDoList = ({
 
     return (
       <>
+        {/* <div className="gradient-radius"> */}
         <input
           type="checkbox"
           name={id}
@@ -73,6 +74,7 @@ const ToDoList = ({
           onChange={handleCheck}
           className="checkbox"
         />
+        {/* </div> */}
         <label htmlFor={id} className="text txt-fix">
           {text}
         </label>
@@ -93,6 +95,7 @@ const ToDoList = ({
             ref={provided.innerRef}
             {...provided.droppableProps}
             className="list"
+            role="list"
           >
             {toDoArrDisplayed.map((toDo, idx) => (
               <Draggable draggableId={toDo.id} index={idx} key={toDo.id}>

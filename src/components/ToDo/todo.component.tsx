@@ -83,10 +83,10 @@ const ToDo = () => {
               <div className="left-and-clear flex-apart">
                 <p className="left txt-fix">{uncompletedAmount} items left</p>
 
-                {/* <ToDoFilter
+                <ToDoFilter
                   handleFilter={handleFilter}
                   currentFilter={currentFilter}
-                /> */}
+                />
 
                 <button
                   className="clear-btn btn txt-fix"
@@ -98,10 +98,10 @@ const ToDo = () => {
             </div>
 
             {/*TODO the filter is part of bar above it in desktop view  */}
-            <ToDoFilter
+            {/* <ToDoFilter
               handleFilter={handleFilter}
               currentFilter={currentFilter}
-            />
+            /> */}
           </div>
 
           <p className="drag-and-drop">Drag and drop to reorder list</p>
@@ -113,15 +113,18 @@ const ToDo = () => {
 
 export default ToDo;
 
-//TODO
 //DONE -items left (not completed todos)
 //DONE all, active, complited filter
 //DONE delete all completed
 //DONE drag and drop
-// hold shift
 //DONE light and dark mode
-// Prevent from adding to much or give a scroll
-// small mobile fixes
+//DONE small mobile fixes
 //DONE box shadow fix
-// filter part of container upper it on desktop
-// add ts
+//DONE filter part of container upper it on desktop
+//DONE add ts
+//DONE favicon
+
+//TODO
+// Prevent from adding to much or give a scroll
+// hold shift
+// hover state for checkbox

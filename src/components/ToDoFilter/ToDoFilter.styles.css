@@ -1,15 +1,24 @@
 .filter {
+  background-color: hsl(var(--clr-white));
   color: hsl(var(--clr-gray-400));
   font-weight: var(--ff-w-b);
-  background-color: hsl(var(--clr-white));
-  /*FIXME does not work? */
-  box-shadow: 0rem 0.5rem 1.5rem var(--clr-shadow);
-  width: 100%;
   border-radius: var(--bor-rad);
-  padding: 1rem 1.5rem;
+
   display: flex;
   justify-content: center;
   gap: 0.3rem;
+}
+
+/* desktop- part of upper */
+@media (max-width: 35em) {
+  .filter {
+    position: absolute;
+    top: 6rem;
+    left: 0;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    box-shadow: 0rem 0.5rem 1.5rem var(--clr-shadow);
+  }
 }
 
 .filter-btn.active {
