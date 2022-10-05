@@ -16,11 +16,15 @@
   color: hsl(var(--clr-gray-500));
 }
 
-.checkbox--fake {
-  cursor: unset !important;
+.checkbox-fake {
+  /* I think it's better to just repeat a few lines than mess with overlapping styles with an input element */
   position: absolute;
+  width: 2rem;
+  aspect-ratio: 1;
+  border: 0.1rem solid hsl(var(--clr-gray-200));
+  border-radius: 50%;
 
-  top: 1.2rem !important;
+  top: 1.2rem;
   left: 1.5rem;
 }
 .checkbox--fake:hover {
