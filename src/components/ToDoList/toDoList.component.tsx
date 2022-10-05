@@ -65,16 +65,16 @@ const ToDoList = ({
 
     return (
       <>
-        {/* <div className="gradient-radius"> */}
-        <input
-          type="checkbox"
-          name={id}
-          id={id}
-          checked={checked}
-          onChange={handleCheck}
-          className="checkbox"
-        />
-        {/* </div> */}
+        <div className="gradient-radius">
+          <input
+            type="checkbox"
+            name={id}
+            id={id}
+            checked={checked}
+            onChange={handleCheck}
+            className="checkbox"
+          />
+        </div>
         <label htmlFor={id} className="text txt-fix">
           {text}
         </label>

@@ -4,6 +4,8 @@ import Input from "../ToDoInput/todo-input.component";
 import ToDoList from "../ToDoList/toDoList.component";
 import ToDoFilter from "../ToDoFilter/ToDoFilter.component";
 
+import { useLocalStorage } from "../../hooks/useLocalStorage";
+
 import mainImg from "../../images/bg-desktop-light.jpg";
 import moonIcon from "../../images/icon-moon.svg";
 import sunIcon from "../../images/icon-sun.svg";
@@ -17,9 +19,12 @@ export type ToDoType = {
 };
 
 const ToDo = () => {
-  const [toDoArr, setToDoArr] = useState<ToDoType[]>([]);
-  const [toDoArrDisplayed, setToDoArrDisplayed] = useState<ToDoType[]>([]);
-  const [isDarkTheme, setisDarkTheme] = useState(false);
+  const [toDoArr, setToDoArr] = useLocalStorage<ToDoType[]>("toDoArr", []);
+  const [toDoArrDisplayed, setToDoArrDisplayed] = useLocalStorage<ToDoType[]>(
+    "toDoArrDisplayed",
+    []
+  );
+  const [isDarkTheme, setisDarkTheme] = useLocalStorage("isDarkTheme", false);
   const [currentFilter, setCurrentFilter] = useState("all");
 
   const completed = toDoArr.filter((item) => item.completed);
@@ -96,12 +101,6 @@ const ToDo = () => {
                 </button>
               </div>
             </div>
-
-            {/*TODO the filter is part of bar above it in desktop view  */}
-            {/* <ToDoFilter
-              handleFilter={handleFilter}
-              currentFilter={currentFilter}
-            /> */}
           </div>
 
           <p className="drag-and-drop">Drag and drop to reorder list</p>
@@ -123,8 +122,10 @@ export default ToDo;
 //DONE filter part of container upper it on desktop
 //DONE add ts
 //DONE favicon
+//DONE persist data
+//DONE hover state for checkbox
 
 //TODO
 // Prevent from adding to much or give a scroll
 // hold shift
-// hover state for checkbox
+// fix code architecture ?

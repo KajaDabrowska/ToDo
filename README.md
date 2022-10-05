@@ -17,6 +17,7 @@ Users should be able to:
 - Clear all completed todos
 - Toggle light and dark mode
 - **Bonus**: Drag and drop to reorder items on the list
+- **My Bonus**: Persist todos and dark mode
 
 ### Links
 
@@ -58,7 +59,7 @@ Users should be able to:
 }
 ```
 
-- Stoped forgeting to use the TS template for React (or so I hope 🥺)
+- Stopped forgeting to use the TS template for React (or so I hope 🥺)
 
 ```bash
 npx create-react-app my-app --template typescript
