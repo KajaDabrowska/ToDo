@@ -42,7 +42,7 @@ const Input = ({ setToDoArr, setToDoArrDisplayed }: Props) => {
         <label htmlFor="input" className="input-label">
           <div className="sr-only">Create a new todo...</div>
         </label>
-        <input type="checkbox" disabled className="checkbox checkbox--fake" />
+        <div className="checkbox-fake" />
         <input
           placeholder="Create a new todo..."
           type="text"
